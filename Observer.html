@@ -20,18 +20,45 @@
 var Observer = (function(){
 	var _message = {};
 	return {
-		regist:function(){
-
+		regist:function(type,fn){
+			if(typeof _message[type] == 'undefined'){
+				_message[type] = [fn];
+			}else{
+				_message[type].push(fn);
+			}
 		},
-		fire:function(){
-
+		fire:function(type,xxx){
+			if(!_message[type]) return;
+			var args = [].slice.call(arguments,1)
+			_message[type].forEach(function(v,i){
+				v.apply(null,args);
+			});
 		},
-		remove:function(){
+		remove:function(type,fn){
+			if(!_message[type]) return;
+			_message[type].forEach(function(v,i){
+				_message[type][i] == fn && _message[type].splice(i,1);
+			}.bind(_message[type]));
 
 		}
 	}
 }).call(this)
 
+var fn1 = function(arg){
+	console.log([].slice.call(arguments));
+};
+var fn2 = function(arg){
+	console.log([].slice.call(arguments));
+};
+
+Observer.regist('click',fn1);
+Observer.regist('click',fn2);
+
+Observer.fire('click','a','b','c');
+
+Observer.remove('click',fn1);
+
+Observer.fire('click','a','b','c');
 
 
 

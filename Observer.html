@@ -37,7 +37,7 @@ var Observer = (function(){
 		remove:function(type,fn){
 			if(!_message[type]) return;
 			_message[type].forEach(function(v,i){
-				_message[type][i] == fn && _message[type].splice(i,1);
+				this[i] == fn && this.splice(i,1);
 			}.bind(_message[type]));
 
 		}

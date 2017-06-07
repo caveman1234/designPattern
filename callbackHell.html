@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript" src='./js/lodash.js'></script>
+</head>
+<body>
+<div id="ball1"></div>
+<div id="ball2"></div>
+<div id="ball3"></div>
+<div id="ball4"></div>
+<style type="text/css">
+	#ball1,#ball2,#ball3,#ball4{
+		width: 20px;
+		height: 20px;
+		position: relative;
+		border-radius: 50%;
+		margin: 10px;
+		background: blue;
+	}
+
+
+
+	
+</style>
+
+
+
+
+
+
+<script>
+
+
+
+
+
+// function func(ball,to,cb){
+// 	var left = parseInt(window.getComputedStyle(ball).left)
+// 	setTimeout(()=>{
+// 		if(left == to){
+// 			cb && cb()
+// 		}else{
+// 			if(left < to){
+// 				left += 2;
+// 			}else{
+// 				left -= 2;
+				
+// 			}
+// 			ball.style.left = `${left}px`;
+// 				func(ball,to,cb);
+			
+// 		}
+// 	},20)
+// }
+
+// func(ball1,100,function(){
+// 	func(ball2,110,function(){
+// 		func(ball3,120,function(){
+// 			func(ball4,130,function(){
+// 				func(ball4,50,function(){
+// 					func(ball3,50,function(){
+// 						func(ball2,50,function(){
+// 							func(ball1,50);
+// 						})
+// 					})
+// 				})
+// 			})
+// 		})
+// 	})
+// })
+
+
+
+
+
+
+function ballPromise(ball,to){
+	var left = parseInt(window.getComputedStyle(ball).left)
+	return new Promise((res,rej)=>{
+		function fun(){
+			setTimeout(()=>{
+				if(left == to){
+					res();
+				}else{
+					if(left < to){
+						left += 2;
+					}else{
+						left -= 2;
+					}
+					ball.style.left = `${left}px`;
+					fun();
+				}
+			},20)
+		}
+		fun()
+	});
+}
+// ballPromise(ball1,100)
+// 	.then(()=>ballPromise(ball2,100))
+// 	.then(()=>ballPromise(ball3,100))
+// 	.then(()=>ballPromise(ball4,100))
+// 	.then(()=>ballPromise(ball4,50))
+// 	.then(()=>ballPromise(ball3,50))
+// 	.then(()=>ballPromise(ball2,50))
+// 	.then(()=>ballPromise(ball1,50))
+// 	.then(()=>ballPromise(ball1,100))
+// 	.then(()=>ballPromise(ball2,100))
+// 	.then(()=>ballPromise(ball3,100))
+// 	.then(()=>ballPromise(ball4,100))
+
+	async function func(){
+		await ballPromise(ball1,100);
+		await ballPromise(ball2,100)
+		await ballPromise(ball3,100)
+		await ballPromise(ball4,100)
+		await ballPromise(ball4,50)
+		await ballPromise(ball3,50)
+		await ballPromise(ball2,50)
+		await ballPromise(ball1,50)
+		await ballPromise(ball1,100)
+		await ballPromise(ball2,100)
+		await ballPromise(ball3,100)
+		await ballPromise(ball4,100)
+	}
+	func()
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+</script>
+</body>
+</html>

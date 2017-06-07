@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>promise</title>
+</head>
+<body>
+
+<script>
+	
+function Promise(fn){
+	var list = [];
+	this.then = function(x){
+		list.push(x);
+		return this;
+	}
+	var solve = function(){
+		console.log(list);
+	}
+	fn(solve);
+}
+new Promise(function(solve){
+	setTimeout(function(){
+		console.log('timeout')
+		solve();
+	});
+}).then(4444).then(3333).then(2222);
+
+
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>

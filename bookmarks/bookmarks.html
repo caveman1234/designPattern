@@ -1,0 +1,176 @@
+
+<!DOCTYPE html>
+<html lang="en" manifest="demo.appcache">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="./jquery.js"></script>
+</head>
+<body>
+<style type="text/css">
+ul > div{
+	cursor: pointer;
+}
+</style>
+
+<button class="expandAll">展开全部</button>
+<div id="div"></div>
+
+
+
+<script>
+
+
+
+
+
+
+
+
+var arr = [
+	{
+		title:'框架1',
+		url:'xxx',
+		children:[
+			{
+				title:'tinpa',
+				url:'www.baidu.com'
+			},
+			{
+				title:'vue',
+				url:'www.taobao.com'
+			}
+		]
+	},
+	{
+		title:'框架2',
+		url:'xxx',
+		children:[
+			{
+				title:'tinpa',
+				url:'www.baidu.com'
+			},{
+				title:'vue',
+				url:'www.taobao.com'
+			},
+			{
+				title:'vue',
+				url:'www.taobao.com'
+			}
+		]
+	},
+	{
+		title:'框架3',
+		url:'xxx',
+		children:[
+			{
+				title:'tinpa',
+				url:'http://taobaofed.org/blog/2017/01/05/writing-readable-code/'
+			},
+			{
+				title:'vue',
+				url:'www.taobao.com'
+			}
+			,
+			{
+				title:'vue',
+				url:'www.taobao.com'
+			}
+		]
+	}
+];
+
+
+function func(){
+	var ul = document.createElement('ul');
+	arr.forEach(function(item){
+		var div = document.createElement('div');
+		div.className = 'nav'
+		div.innerHTML = item.title;
+		if(item.children){
+			var childrenUl = document.createElement('ul');
+			item.children.forEach(function(itemC){
+				var childrenLi = document.createElement('li');
+				childrenLi.innerHTML = `<a target='_blank' href=${itemC.url}>${itemC.title}</a>`
+				childrenUl.appendChild(childrenLi);
+			})	
+		}
+		ul.appendChild(div);
+		ul.appendChild(childrenUl);
+
+	});
+	div.appendChild(ul);
+}
+
+
+
+func();
+
+$('.nav').on('click',function(){
+	$(this).siblings('ul').hide();
+	$(this).next().show();
+
+})
+$('#div > ul > ul').hide();
+
+$('.expandAll').on('click',function(){
+	if($(this).html()=='展开全部'){
+		$('#div > ul > ul').show();
+		$(this).html('收起全部');
+	}else if($(this).html()=='收起全部'){
+		$('#div > ul > ul').hide();
+		$(this).html('展开全部');
+	}
+	
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

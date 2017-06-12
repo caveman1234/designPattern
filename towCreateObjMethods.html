@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>两种创建对象的方式异同</title>
+</head>
+<body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+	
+function Func(){
+	this.func1 = function(){
+		return 'func1';
+	}
+	this.func2 = this.func1()+'+func2';
+	// this.func3 = func4() + 'func3';
+	this.func4 = function(){
+		return 'func3';
+	}
+	this.func5 = this.func6()+'+func5'//可以说明call操作在obj.__proto__ = prototypeObj之后
+}
+Func.prototype.func6 = function(){
+	return 'func6';
+}
+
+var x = new Func();
+
+//new操作步骤
+
+var prototypeObj = {
+	func1:function(){
+
+		console.log('func1');
+		return 'func1'
+	}
+};
+function Func1(){
+	this.func2 = function(){
+		console.log(func2);
+	}
+	this.func3 = this.func1();
+};
+function newFun(){
+	var obj = {};
+	obj.__proto__ = prototypeObj;
+	prototypeObj.constructor = newFun;
+	Func1.call(obj,arguments);
+	return obj;
+}
+
+var a = newFun();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

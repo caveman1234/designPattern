@@ -77,7 +77,7 @@ str.replace(/./g,function(v,i,x){
 })
 
 ```
-[图片](./1.png)
+![图片](./1.png)
 
 
 

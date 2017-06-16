@@ -3,8 +3,7 @@
  > js另类写法
  
  ```js
- (context ? context.defQueue : globalDefQueue).push([name, deps, callbac
- k])
+ (context ? context.defQueue : globalDefQueue).push([name, deps, callback])
  ```
  >  事件的订阅发布
  

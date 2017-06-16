@@ -7,7 +7,7 @@
  ```
  >  事件的订阅发布
  
- ```
+ ```js
  
 var on = function (name, cb) {
 	    var cbs = this.events[name];

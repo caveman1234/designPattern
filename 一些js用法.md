@@ -75,9 +75,10 @@ str.replace(/./g,function(v,i,x){
 	console.log(v,i,x);
 	return '='
 })
-![图片](./1.png)
 
 ```
+> 执行结果
+![图片](./1.png)
 
 
 

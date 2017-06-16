@@ -9,24 +9,24 @@
  
  ```
  
- 	var on = function (name, cb) {
-                var cbs = this.events[name];
-                if (!cbs) {
-                    cbs = this.events[name] = [];
-                }
-                cbs.push(cb);
-            },
-    var emit = function (name, evt) {
-        each(this.events[name], function (cb) {
-            cb(evt);
-        });
-        if (name === 'error') {
-            //Now that the error handler was triggered, remove
-            //the listeners, since this broken Module instance
-            //can stay around for a while in the registry.
-            delete this.events[name];
-        }
+var on = function (name, cb) {
+	    var cbs = this.events[name];
+	    if (!cbs) {
+	        cbs = this.events[name] = [];
+	    }
+	    cbs.push(cb);
+	},
+var emit = function (name, evt) {
+    each(this.events[name], function (cb) {
+        cb(evt);
+    });
+    if (name === 'error') {
+        //Now that the error handler was triggered, remove
+        //the listeners, since this broken Module instance
+        //can stay around for a while in the registry.
+        delete this.events[name];
     }
+}
     
 ```
 
@@ -53,7 +53,7 @@ for(var i in FuncObj){
 
 > for in 另类写法,不会把原生构造函数的原型属性读出来
 
-```
+```js
 var obj = {
 	a:1,
 	b:2
@@ -68,22 +68,4 @@ for(var i in obj){
 for(var i in obj){
 	obj.hasOwnProperty(i) && console.log(i); a b
 }
-```
-> __proto__黑科技
-
-```
-var arrMethods = ['push', 'pop', 'shift', 'unshift', 'splice', 'sort', 'reverse'];
-
-var arrObj = {};
-
-arrMethods.forEach(function(v){
-    var originM = Array.prototype[v];
-    arrObj[v] = function(){
-        console.log('使用了---',v);
-        originM.call(arrMethods,arguments);
-    }
-});
-var list = [1,2,3];
-list.__proto__ = arrObj;
-list.push(4);
 ```

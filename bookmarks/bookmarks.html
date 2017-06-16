@@ -93,7 +93,7 @@ function func(){
 				var childrenLi = document.createElement('li');
 				childrenLi.innerHTML = `<a target='_blank' href=${itemC.url}>${itemC.title}</a>`
 				childrenUl.appendChild(childrenLi);
-			})	
+			})
 		}
 		ul.appendChild(div);
 		ul.appendChild(childrenUl);
@@ -121,10 +121,8 @@ $('.expandAll').on('click',function(){
 		$('#div > ul > ul').hide();
 		$(this).html('展开全部');
 	}
-	
+
 })
-
-
 
 
 

@@ -7,16 +7,16 @@
  ```
  >  事件的订阅发布
  
- ```js
+ ```
  
- 	on: function (name, cb) {
+ 	var on = function (name, cb) {
                 var cbs = this.events[name];
                 if (!cbs) {
                     cbs = this.events[name] = [];
                 }
                 cbs.push(cb);
             },
-    emit: function (name, evt) {
+    var emit = function (name, evt) {
         each(this.events[name], function (cb) {
             cb(evt);
         });
@@ -27,6 +27,7 @@
             delete this.events[name];
         }
     }
+    
 ```
 
 > for in
@@ -50,4 +51,21 @@ for(var i in FuncObj){
 }
 ```
 
-          
+> for in 另类写法,不会把原生构造函数的原型属性读出来
+
+```
+var obj = {
+	a:1,
+	b:2
+};
+obj.__proto__ = {
+	c:3,
+	d:4
+};
+for(var i in obj){
+	console.log(i)//a b c d
+}
+for(var i in obj){
+	obj.hasOwnProperty(i) && console.log(i); a b
+}
+```

@@ -69,3 +69,21 @@ for(var i in obj){
 	obj.hasOwnProperty(i) && console.log(i); a b
 }
 ```
+> __proto__黑科技
+
+```
+var arrMethods = ['push', 'pop', 'shift', 'unshift', 'splice', 'sort', 'reverse'];
+
+var arrObj = {};
+
+arrMethods.forEach(function(v){
+    var originM = Array.prototype[v];
+    arrObj[v] = function(){
+        console.log('使用了---',v);
+        originM.call(arrMethods,arguments);
+    }
+});
+var list = [1,2,3];
+list.__proto__ = arrObj;
+list.push(4);
+```

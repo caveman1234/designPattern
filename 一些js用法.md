@@ -69,3 +69,14 @@ for(var i in obj){
 	obj.hasOwnProperty(i) && console.log(i); a b
 }
 ```
+> js string replace
+```js
+str.replace(/./g,function(v,i,x){
+	console.log(v,i,x);
+	return '='
+})
+
+
+
+
+```

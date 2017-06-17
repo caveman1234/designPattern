@@ -82,6 +82,11 @@ str.replace(/./g,function(v,i,x){
 
 ![图片](./img/1.png)
 
+> promise
+
+![图片](./img/2.png)
+
+
 
 
 

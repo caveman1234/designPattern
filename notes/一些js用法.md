@@ -80,11 +80,11 @@ str.replace(/./g,function(v,i,x){
 
 > 执行结果
 
-![图片](./img/1.png)
+![图片](../img/1.png)
 
 > promise
 
-![图片](./img/2.png)
+![图片](../img/2.png)
 
 
 

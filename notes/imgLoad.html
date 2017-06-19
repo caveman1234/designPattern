@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+
+<style>
+
+
+</style>
+
+
+<div id="div">click</div>
+
+<div id="imgs"></div>
+
+
+
+
+
+
+<script>
+var imgAddress = ['https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1498446195&di=96ce55fb450833991770add8e0f648ca&imgtype=jpg&er=1&src=http%3A%2F%2Fbbsatt.yineitong.com%2Fforum%2F2011%2F03%2F25%2F110325164993a2105258f0d314.jpg','https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1497851477471&di=495defa94cf34ca1fbe4745522ab43ae&imgtype=0&src=http%3A%2F%2Fimg.pconline.com.cn%2Fimages%2Fupload%2Fupc%2Ftx%2Fphotoblog%2F1305%2F23%2Fc9%2F21233806_21233806_1369310564359.jpg','https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1497851477471&di=9379e5981ab670205d017ccce30f64e5&imgtype=0&src=http%3A%2F%2Fimg.pconline.com.cn%2Fimages%2Fupload%2Fupc%2Ftx%2Fphotoblog%2F1107%2F05%2Fc5%2F8235345_8235345_1309860288554.jpg','https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1497851477471&di=0144f793c8b81bd0762ed19175f7d796&imgtype=0&src=http%3A%2F%2Fimg.pconline.com.cn%2Fimages%2Fupload%2Fupc%2Ftx%2Fphotoblog%2F1403%2F03%2Fc4%2F31738359_31738359_1393842469406.jpg','https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1497851477471&di=45108b51488bd0668057d23e89cff330&imgtype=0&src=http%3A%2F%2Fbbsatt.yineitong.com%2Fforum%2F2011%2F03%2F25%2F110325164993a2105258f0d314.jpg','https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1497851477470&di=24b69c53106968e7719e5b119133feec&imgtype=0&src=http%3A%2F%2Fimg.pconline.com.cn%2Fimages%2Fupload%2Fupc%2Ftx%2Fphotoblog%2F1409%2F06%2Fc1%2F38320647_38320647_1409988602931.jpg','https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1497851477470&di=529984a5299fb55468f6a2e58cdb34a2&imgtype=0&src=http%3A%2F%2Fimg.pconline.com.cn%2Fimages%2Fupload%2Fupc%2Ftx%2Fphotoblog%2F1305%2F23%2Fc9%2F21233806_21233806_1369310545109.jpg']
+	
+
+div.onclick = function(){
+  imgAddress.forEach(function(addr,i){
+    var img = document.createElement('img');
+    img.setAttribute('src',addr);
+    imgs.appendChild(img);
+  });
+}
+
+//提前缓存需要加载的图片
+imgAddress.forEach(function(addr,i){
+  setTimeout(function(){
+    var img = new Image();
+    img.src = addr;
+    img.onload = function(){
+      console.log(i,'--img has loaded--')
+    }
+  },100);
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

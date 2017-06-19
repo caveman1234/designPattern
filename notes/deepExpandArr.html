@@ -5,6 +5,8 @@
 </head>
 <body>
 <script>
+
+//数组
 	var temp = [];
 	function expandArr(arr){
 		arr = (!Array.isArray(arr)) ? [] : arr;
@@ -19,6 +21,10 @@
 	}
 	var x = expandArr([1,2,3,[4,5,[6,7,[8,9]]]]);
 	console.log(x);
+
+
+
+//对象
 	var objTemp = {};
 	function deepCloneObj(obj){
 		obj = (typeof(obj) != 'object') ? {} : obj;

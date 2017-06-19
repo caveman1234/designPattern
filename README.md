@@ -9,7 +9,8 @@
 > 7. [一些js用法](./notes/一些js用法.md)  
 > 8. [两种创建对象的方式不同点](./notes/towCreateObjMethods.html)  
 > 9. [filter简单实现](./notes/filter.md)  
-> 9. [丑陋的数组，对象深度复制](./notes/deepExpandArr.html)  
+> 10. [丑陋的数组，对象深度复制](./notes/deepExpandArr.html)  
+> 11. [图片缓存js](./notes/imgLoad.html)  
 
 
 

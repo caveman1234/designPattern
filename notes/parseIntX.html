@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>parseIntX</title>
+</head>
+<body>
+<script>
+	function parseIntX(str){
+		if(typeof(str) !== 'string') return;
+		var temp = [];
+		var strArr = str.split('');
+		var charCode0 = '0'.charCodeAt(0);
+		var charCode9 = '9'.charCodeAt(0);
+		for(var i = 0;i<strArr.length;i++){
+			if(strArr[i].charCodeAt(0) >= charCode0 && strArr[i].charCodeAt(0) <= charCode9){
+				temp.push(strArr[i]);
+			}else{
+				break;
+			}
+		}
+		console.log(temp.join(''));
+	}
+
+
+
+
+
+</script>
+
+</body>
+</html>

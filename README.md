@@ -11,6 +11,8 @@
 > 9. [filter简单实现](./notes/filter.md)  
 > 10. [丑陋的数组，对象深度复制](./notes/deepExpandArr.html)  
 > 11. [图片缓存js](./notes/imgLoad.html)  
+> 12. [实现parseInt](./notes/parseIntX.html)  
+> 13. [限制一个对象的大小，以防内存泄漏](./notes/limitedObj.html)  
 
 
 

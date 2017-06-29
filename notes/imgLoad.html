@@ -7,9 +7,46 @@
 
 
 <style>
+*{
+	margin:0;
+	padding: 0;
+}
+.left{
+	width: 100px;
+	float: left;
+	border:1px solid red;
+	height: 100px;
+	box-sizing: border-box;
+}
+.right{
+	width: 100px;
+	float: right;
+	border:1px solid red;
+	height: 100px;
+	/*margin-top: -100px;*/
+	box-sizing: border-box;
+
+}
+.text{
+	border:1px solid blue;
+	/*margin:0 100px;*/
+	height: 100px;
+	box-sizing: border-box;
+	float: left;
+	width: calc( 100% - 300px );
+
+}
 
 
 </style>
+
+<div class="container">
+	<div class="left"></div>
+	<div class="text"></div>
+	<div class="right"></div>
+</div>
+
+
 
 
 <div id="div">click</div>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>限制一个对象的大小</title>
+</head>
+<body>
+<script>
+	
+function func(maxLen){
+	obj = {};
+	arr = [];
+	maxLen = maxLen;
+	this.add = function(key,value){
+		obj[key] = value;
+		if(arr.includes(key)){//判断key已经存在了的情况
+			arr.splice(arr.findIndex(v=>v == key),1);
+			arr.push(key);
+		}else{
+			arr.push(key);
+		}
+		//判断对象长度超过限制的情况
+		if(arr.length > maxLen){
+			var shiftKey = arr.shift();
+			delete obj[shiftKey];
+		}
+	}
+	this.getObj = function(){
+		return obj;
+	}
+	this.getArr = function(){
+		return arr;
+	}
+}
+var x = new func(3);
+
+
+
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>

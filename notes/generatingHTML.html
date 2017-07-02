@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>generatingHTML</title>
+</head>
+<body>
+
+<div u-meta='{"id":"one","color":"red"}'></div>
+<div u-meta='{"id":"one","color":"green"}'></div>
+<div u-meta='{"id":"one","color":"blue"}'></div>
+
+
+
+
+
+<script>
+	var metaEls = document.querySelectorAll('div[u-meta]');
+	metaEls.forEach(function(el,i){
+		var meta = JSON.parse(el.getAttribute('u-meta'));
+		var id = meta.id;
+		var color = meta.color;
+		var ele = document.createElement('div');
+		ele.setAttribute('id',id);
+		ele.style.color = color;
+		ele.innerHTML = ('new ele' + i )
+		el.appendChild(ele);
+	});
+	
+</script>
+
+</body>
+</html>

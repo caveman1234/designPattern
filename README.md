@@ -13,6 +13,7 @@
 > 11. [图片缓存js](./notes/imgLoad.html)  
 > 12. [实现parseInt](./notes/parseIntX.html)  
 > 13. [限制一个对象的大小，以防内存泄漏](./notes/limitedObj.html)  
+> 14. [一种用原生dom构建组件的方式](./notes/generatingHTML.html)  
 
 
 

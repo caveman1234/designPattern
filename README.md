@@ -14,6 +14,7 @@
 > 12. [实现parseInt](./notes/parseIntX.html)  
 > 13. [限制一个对象的大小，以防内存泄漏](./notes/limitedObj.html)  
 > 14. [一种用原生dom构建组件的方式](./notes/generatingHTML.html)  
+> 14. [去重，排序，统计出现次数](./notes/someTest.html)  
 
 
 

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>some test</title>
+</head>
+<body>
+<script>
+	//排序
+var arr = [1,5,8,8,4,2,'a','b','aa','bb','abb'];
+arr.sort(function(a,b){
+	if(typeof a === typeof b) return a > b ? 1 : -1;
+	return (typeof a > typeof b) ? 1 : -1;
+});
+// console.log(arr);
+
+var arr1 = [1,32,2,3,4,5,32,1,32];
+//去重
+var uniqArr1 = arr1.filter((v,i)=>arr1.indexOf(v) == i).sort((a,b)=>a-b);
+
+
+//计算每个元素出现次数
+var arr1Times = uniqArr1.map(v=>arr1.filter(v1=>v1==v).length)
+console.log('arr1',arr1);
+console.log('uniqArr1',uniqArr1);
+console.log('arr1Times',arr1Times);
+
+
+
+</script>
+
+</body>
+</html>

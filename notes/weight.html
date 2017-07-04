@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>按照权重取数据</title>
+</head>
+<body>
+<script>
+	
+var arr = [{el:'a',weight:1},{el:'b',weight:5},{el:'c',weight:3},{el:'d',weight:6}]
+
+
+
+function get(arr){
+	return function(){
+		var maxWeight = null;
+		arr.forEach((v,i)=>{
+			if(maxWeight < v.weight){
+				maxWeight = v.weight;
+			}
+		});
+		var index = arr.findIndex(v=>v.weight == maxWeight);
+		return arr.splice(index,1);
+	}
+}
+var getMaxWeightItem = get(arr);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>

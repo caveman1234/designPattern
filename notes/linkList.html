@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>linkList单向链表</title>
+</head>
+<body>
+<script>
+	
+var LinkList = function(){
+	var Node = function(element){
+		this.element = element;
+		this.next = null;
+	}
+	var length = 0;
+	var head = null;
+	this.append = function(el){
+		var node = new Node(el);
+		if(length == 0){
+			head = node;
+			length ++;
+		}else{
+			var current = head;
+			while(current.next){
+				current = current.next;
+			}
+			current.next = node;
+			length ++;
+		}
+	};
+	this.getAll = function(){
+		var current = head;
+		var arr = [];
+		while(current.next){
+			arr.push(current);
+			current = current.next;
+		}
+		arr.push(current);
+		return arr;
+	};
+	this.insert = function(position,ele){
+		var previous = null;
+		var current = head;
+		var index = 0;
+		var node = new Node(ele);
+		if(position < 0 || position > length-1) {
+			console.warn('越界');
+			return null;
+		}
+		if(position == 0){
+			head = node;
+			node.next = current;
+			length++;
+		}else{
+			while(index < position){//为了使index 和 current 所在项index同步，不能用<=
+				index ++;				//index序号和current个数同步的
+				previous = current;
+				current = current.next;
+			}
+			previous.next = node;
+			node.next = current;
+			length++;
+		}
+	};
+	this.removeAt = function(position){
+		var current = head;
+		var previous = null;
+		var index = 0;
+		if(position < 0 || position > length - 1){
+			console.warn('越界');
+			return;
+		}
+		if(position == 0){
+			head = current.next;
+			length--;
+		}else{
+			while(index < position){
+				index++;
+				previous = current;
+				current = current.next;
+			}
+			previous.next = current.next;
+			length--;
+		}
+	};
+	this.remove = function(ele){
+		
+	};
+	this.indexOf = function(ele){
+		var index = 0;
+		var current = head;
+		while(index < length){
+			if(current.element == ele){
+				return index;
+			}
+			index ++;
+			current = current.next;
+		}
+	}
+	this.isEmpty = function(){
+		head = null;
+		length == 0;
+	};
+	this.size = function(){
+		return length;
+	};
+	this.toString = function(){
+		var eleArr = [];
+		var index = 0;
+		var current = head;
+		while(index < length){
+			eleArr.push(current.element);
+			current = current.next;
+			index++;
+		}
+		return eleArr.join('');
+	};
+	this.print = function(){
+		var index = 0;
+		var current = head;
+		while(index < length){
+			console.log(index,'-',current)
+			current = current.next;
+			index++;
+		}
+	};
+}
+
+var list1 = new LinkList();
+list1.append('a');
+list1.append('b');
+list1.append('c');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>

@@ -26,6 +26,16 @@ console.log('arr1Times',arr1Times);
 
 
 
+//去重json数据
+function func(arr,key){
+	var values = arr.map(function(v){return v[key]});
+	var uniq = arr.filter(function(v,i){
+		return values.indexOf(v[key]) == i;
+	});
+	return uniq;
+}
+
+
 </script>
 
 </body>

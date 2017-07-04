@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>bothwayLinkList</title>
+</head>
+<body>
+<script>
+	
+var BothwayLinkList = function(){
+	var head = null;
+	length = 0;
+	var Node = function(element){
+		this.element = element;
+		this.next = null;
+		this.prev = null;
+	}
+	this.getAllNodes = function(){
+		var arr = [];
+		var current = head;
+		while(current){
+			arr.push(current);
+			current = current.next;
+		}
+		return arr;
+	}
+	this.append = function(el){
+		var node = new Node(el);
+		if(length == 0){
+			head = node;
+			length++;
+		}else{
+			var current = head;
+			while(current.next){
+				current = current.next;
+			}
+			current.next = node;
+			length++;
+		}
+	}
+}
+var list = new BothwayLinkList();
+list.append('a');
+list.append('b');
+list.append('c');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>

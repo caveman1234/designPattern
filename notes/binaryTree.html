@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>binary tree二叉树</title>
+</head>
+<body>
+<script>
+	
+function binaryTree(){
+
+	var Node = function(data){
+		this.data = data;
+		this.left = null;
+		this.right = null;
+	};
+	this.root = null;
+	this.insertLeft = function(data){
+		var node = new Node(data);
+		if(this.root == null){
+			this.root = node;
+		}else{
+			var current = this.root;
+			while(current.left){
+				current = current.left;
+			}
+			current.left = node;
+		}
+	};
+	this.insertRight = function(data){
+		var node = new Node(data);
+		if(this.root == null){
+			this.root = node;
+		}else{
+			var current = this.root;
+			while(current.right){
+				current = current.right;
+			}
+			current.right = node;
+		}
+	};
+	this.getDeep = function(node){
+		
+	};
+}
+
+var tree = new binaryTree();
+tree.insertLeft('a');
+tree.insertRight('a1');
+tree.insertLeft('b');
+tree.insertRight('b1');
+tree.insertLeft('c');
+tree.insertRight('c1');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>

@@ -65,6 +65,16 @@ a.forEach(function(v){
 	}
 })
 
+function* func(){
+	yield 1;
+	yield 2;
+}
+var yieldFunc = func();
+// var v1 = yieldFunc.next().value;
+// console.log(v1)
+// yieldFunc.next().value
+// var v2 = yieldFunc.next().value
+// console.log(v2);
 
 
 

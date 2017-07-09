@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>defineProperty</title>
+</head>
+<body>
+<script>
+
+var obj = {
+	firstName:'hello',
+	lastName:'world'
+};
+Object.defineProperty(obj,'fullName',{
+	get:function(){
+		return this.firstName + this.lastName;
+	},
+	set:function(v){
+		console.log(this.v);
+	}
+});
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>

@@ -18,6 +18,8 @@
 > 16. [单向链表](./notes/linkList.html)  
 > 17. [按照权重取数据](./notes/weight.html)  
 > 18. [二叉树（简陋）](./notes/binaryTree.html)  
+> 19. [defineProperty](./notes/defineProperty.html)  
+> 19. [数组的代理，对象的代理，dom和model之间的代理](./notes/proxy.html)  
 
 
 

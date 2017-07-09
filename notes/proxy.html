@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>proxy</title>
+</head>
+<body>
+<div id="a">a</div>
+<div id="b">b</div>
+<div id="c">c</div>
+<div id="d">d</div>
+<div id="e">e</div>
+<div id="f">d</div>
+<div id="g">g</div>
+
+<script>
+
+
+	
+
+
+var x = {a:'a',b:'b'};
+var obj = new Proxy(x,{
+	get:function(target,key){
+		if(target.hasOwnProperty(key)){
+			return target[key] + '-get';
+		}else{
+			return undefined;
+		}
+	},
+	set:function(target,key,value){
+		if(target.hasOwnProperty(key)){
+			target[key] = value + '-set-'
+		}else{
+			return undefined;
+		}
+	}
+});
+
+
+//dom 和js object 之间的代理
+var domModel = {};
+var domProxy = new Proxy(domModel,{
+	get:function(target,key){
+		return target[key];
+	},
+	set:function(target,key,value){
+		target[key] = value;
+		var dom = document.getElementById(key);
+		if(dom){
+			dom.innerHTML = value;
+		}else{
+			console.log('dom id not exist!');
+		}
+	}
+});
+
+
+//数组的方法代理
+var a = ['push','pop','shift','unshift'];
+var arr = [1,2,3,4];
+a.forEach(function(v){
+	arr[v] = function(){
+		console.log(`调用了${v}方法`);
+		Array.prototype[v].apply(arr,arguments);
+	}
+})
+
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>

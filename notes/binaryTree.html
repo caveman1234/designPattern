@@ -52,6 +52,17 @@ tree.insertLeft('c');
 tree.insertRight('c1');
 
 
+function func(node,callback){
+	if(!node) return;
+	func(node.left,callback);
+	callback(node)
+	func(node.right,callback);
+}
+func(tree.root,function(node){
+	console.log(node.data);
+})
+
+
 
 
 

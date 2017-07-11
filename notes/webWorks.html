@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>webwork</title>
+	<meta charset="utf-8">
+</head>
+<body>
+<button id="btn">btn-click</button>
+<script>
+	
+var wk = new Worker("./worker.js");
+var arr = new Array(1000000).fill(1).map(()=>(Math.random()*10000).toFixed(2));
+wk.postMessage(arr);
+wk.onmessage = function(event){
+	console.log('sorted',event.data.length);
+};
+wk.onerror = function(event){
+	console.log('error',event);
+}
+
+
+
+
+btn.onclick = function () {
+	console.log('--没有阻塞--');
+}
+
+
+
+
+
+</script>
+
+</body>
+</html>

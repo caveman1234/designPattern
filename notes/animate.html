@@ -1,0 +1,147 @@
+
+<!DOCTYPE html>
+<html lang="en" manifest="demo.appcache">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=0">
+
+<body>
+<style type="text/css">
+
+#div{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background:blue;
+    left: 0px;
+    top:0px;
+    z-index: 1000;
+}
+
+</style>
+<div id="div"></div>
+
+<script >
+function createPoint(currentX,currentY){
+    var span = document.createElement('span');
+    span.style.cssText = "position:absolute;display:block;width:4px;height:4px;borderRadius:50%;background :red;"
+    span.style.left = currentX + 'px';
+    span.style.top = currentY + 'px';
+    document.body.appendChild(span);
+}
+
+
+function funcX(domId,x){
+    var dom = document.querySelector(`#${domId}`);
+    var timer;
+    var oraginX = parseInt(getComputedStyle(dom).left);
+    return new Promise((resolve,reject)=>{
+        var timer = setInterval(()=>{
+            var currentY = parseInt(getComputedStyle(dom).top);
+            var currentX = parseInt(getComputedStyle(dom).left);
+            if(oraginX < x){
+                if(currentX < x){
+                    dom.style.left = (currentX + 2) + 'px';
+                    createPoint(currentX,currentY);
+                }else{
+                    clearInterval(timer);
+                    createPoint(currentX,currentY);
+                    resolve({currentX,currentY});
+                }
+            }else{
+                if(currentX > x){
+                    createPoint(currentX,currentY);
+                    dom.style.left = (currentX - 2) + 'px';
+                }else{
+                    clearInterval(timer);
+                    createPoint(currentX,currentY);
+                    resolve({currentX,currentY});
+                }
+            }
+        },15)
+
+    });
+}
+function funcY(domId,y){
+    var dom = document.querySelector(`#${domId}`);
+    var timer;
+    var oraginY = parseInt(getComputedStyle(dom).top);
+    return new Promise((resolve,reject)=>{
+        var timer = setInterval(()=>{
+            var currentY = parseInt(getComputedStyle(dom).top);
+            var currentX = parseInt(getComputedStyle(dom).left);
+            if(oraginY < y){
+                if(currentY < y){
+                    createPoint(currentX,currentY);
+                    dom.style.top = (currentY + 2) + 'px';
+                }else{
+                    createPoint(currentX,currentY);
+                    clearInterval(timer);
+                    resolve({currentX,currentY});
+                }
+            }else{
+                if(currentY > y){
+                    createPoint(currentX,currentY);
+                    dom.style.top = (currentY - 2) + 'px';
+                }else{
+                    createPoint(currentX,currentY);
+                    clearInterval(timer);
+                    resolve({currentX,currentY});
+                }
+            } 
+        },15)
+
+    });
+}
+
+funcX('div',200)
+    .then(obj=>funcY('div',200))
+    .then(obj=>funcX('div',400))
+    .then(obj=>funcY('div',400))
+    .then(obj=>funcX('div',600))
+    .then(obj=>funcY('div',600))
+    .then(obj=>funcX('div',800))
+    .then(obj=>funcY('div',0))
+    .then(obj=>funcX('div',200))
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

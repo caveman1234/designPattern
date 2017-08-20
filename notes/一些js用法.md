@@ -86,6 +86,16 @@ str.replace(/./g,function(v,i,x){
 
 ![图片](../img/2.png)
 
+> Object.create
+```js
+function create(prototype){
+	var func = function(){};
+	func.prototype = prototype;
+	func.constructor = func;
+	return new func();
+}
+```
+![图片](../img/create.jpeg)
 
 
 

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <script>
+        let state = {
+                todos: [{
+                    text: 'text1',
+                    complete: true
+                }, {
+                    text: 'text2',
+                    complete: true
+                }, {
+                    text: 'text3',
+                    complete: false
+                }],
+                visiableFilter: 'SHOW_COMPLETE'
+            }
+            //actions
+        let ADD1 = {
+            type: 'ADD1',
+            payload1: 'add-1'
+        }
+        let ADD2 = {
+            type: 'ADD2',
+            payload2: 'add-2'
+        }
+        let ADD3 = {
+            type: 'ADD3',
+            payload3: 'add-3'
+        }
+
+        function todos(state = 'ADD1', action = ADD2) {
+            switch (action.type) {
+                case 'ADD1':
+                    return action.payload1;
+                case 'ADD2':
+                    return action.payload2;
+                case 'ADD3':
+                    return action.payload3;
+                default:
+                    return state;
+            }
+        }
+        var x = todos()
+        console.log(x);
+    </script>
+
+
+
+
+
+
+</body>
+
+</html>

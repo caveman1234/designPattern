@@ -22,6 +22,7 @@
 > 20. [数组的代理，对象的代理，dom和model之间的代理](./notes/proxy.html)  
 > 21. [webWork--多线程html](./notes/webWorks.html)-----[webWork--多线程.js](./notes/worker.js)  
 > 22. [小球动画,promise](./notes/animate.html) 
+> 22. [redux](./notes/redux.md) 
 
 
 

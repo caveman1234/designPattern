@@ -23,7 +23,7 @@
 > 21. [webWork--多线程html](./notes/webWorks.html)-----[webWork--多线程.js](./notes/worker.js)  
 > 22. [小球动画,promise](./notes/animate.html) 
 > 22. [redux](./notes/redux.md) 
-> 22. [redux](./notes/eventCallback.md) 
+> 22. [事件回调this为什么指向window](./notes/eventCallback.md) 
 
 
 

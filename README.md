@@ -25,6 +25,7 @@
 > 22. [redux](./notes/redux.md) 
 > 22. [事件回调this为什么指向window](./notes/eventCallback.md) 
 > 22. [react中的compose](./notes/compose.md) 
+> 22. [为什么bind只能bind一次，更改this一次](./notes/bind.md) 
 
 
 

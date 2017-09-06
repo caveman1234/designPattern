@@ -69,3 +69,5 @@ import { mapGetters,mapMutations ,mapActions} from 'vuex'
         }
     }
 ```
+> vue develop tools
+![效果图，time machine](../img/3.png)

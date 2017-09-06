@@ -69,5 +69,8 @@ import { mapGetters,mapMutations ,mapActions} from 'vuex'
         }
     }
 ```
-> vue develop tools
+> vue develop tools 
+
+> time mechine
+
 ![图片](../img/3.png)

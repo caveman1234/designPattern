@@ -22,11 +22,12 @@
 > 20. [数组的代理，对象的代理，dom和model之间的代理](./notes/proxy.html)  
 > 21. [webWork--多线程html](./notes/webWorks.html)-----[webWork--多线程.js](./notes/worker.js)  
 > 22. [小球动画,promise](./notes/animate.html) 
-> 22. [redux](./notes/redux.md) 
-> 22. [事件回调this为什么指向window](./notes/eventCallback.md) 
-> 22. [react中的compose](./notes/compose.md) 
-> 22. [为什么bind只能bind一次，更改this一次](./notes/bind.md) 
-> 22. [Vuex(无模块)](./notes/vuex0.md) 
+> 23. [redux](./notes/redux.md) 
+> 24. [事件回调this为什么指向window](./notes/eventCallback.md) 
+> 25. [react中的compose](./notes/compose.md) 
+> 26. [为什么bind只能bind一次，更改this一次](./notes/bind.md) 
+> 27. [Vuex(无模块)](./notes/vuex0.md) 
+> 28. [Vuex(有模块,namedspace)](./notes/vuex1.md) 
 
 
 

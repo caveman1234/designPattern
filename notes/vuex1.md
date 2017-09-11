@@ -218,4 +218,4 @@ export default {
 
 > 结构 
 
-[图片](../img/x.png)
+![图片](../img/x.png)

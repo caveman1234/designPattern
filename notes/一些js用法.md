@@ -86,7 +86,8 @@ str.replace(/./g,function(v,i,x){
 
 ![图片](../img/2.png)
 
-> Object.create
+> Object.create 这也是实现继承的方式,js对象查找方式，就像一个链表，用__proto__连接
+这就是原型，当在自身对象上没找到就一层一层的向上原型上查找，
 ```js
 function create(prototype){
 	var func = function(){};
@@ -94,6 +95,10 @@ function create(prototype){
 	func.constructor = func;
 	return new func();
 }
+var obj = {a:1};
+var obj1 = Object.create(obj);
+obj1.b = 2;
+//实现了对obj的继承，obj在obj1对原型上了
 ```
 ![图片](../img/create.jpeg)
 

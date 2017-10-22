@@ -87,3 +87,18 @@ export default One = connect(mapStateToProps,mapDispatchToProps)(One)//将state�
 
 
 ```
+
+
+![图片](../img/a.png)
+
+![图片](../img/b.png)
+
+![图片](../img/c.png)
+
+
+
+
+
+
+
+

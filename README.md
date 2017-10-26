@@ -28,8 +28,9 @@
 > 26. [为什么bind只能bind一次，更改this一次](./notes/bind.md) 
 > 27. [Vuex(无模块)](./notes/vuex0.md) 
 > 28. [Vuex(有模块,namedspace)](./notes/vuex1.md) 
-> 28. [Generater](./notes/generater.md) 
-> 28. [把图片转换成base64编码](./notes/base64img.md) 
+> 29. [Generater](./notes/generater.md) 
+> 30. [把图片转换成base64编码](./notes/base64img.md) 
+> 31. [为js打callback](./notes/jscallback.md) 
 
 
 

@@ -29,6 +29,7 @@
 > 27. [Vuex(无模块)](./notes/vuex0.md) 
 > 28. [Vuex(有模块,namedspace)](./notes/vuex1.md) 
 > 28. [Generater](./notes/generater.md) 
+> 28. [把图片转换成base64编码](./notes/base64img.md) 
 
 
 

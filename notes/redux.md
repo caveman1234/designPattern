@@ -88,6 +88,25 @@ export default One = connect(mapStateToProps,mapDispatchToProps)(One)//将state�
 
 ```
 
+> connect 高阶组件
+
+```js
+
+function connect(a,b){
+    let x = a();
+    let y = b();
+    return function app(Comp){
+        return <Comp {...x,...y}></Comp>
+    }
+}
+
+var mapStateToProps = ()=>({});
+var mapDispatchToProps = ()=>({});
+connect(mapStateToProps,mapDispatchToProps)(app);
+
+```
+
+
 
 ![图片](../img/a.png)
 

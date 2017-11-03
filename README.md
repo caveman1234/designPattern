@@ -32,6 +32,7 @@
 > 30. [把图片转换成base64编码](./notes/base64img.md) 
 > 31. [为js打callback](./notes/jscallback.md) 
 > 31. [箭头函数this](./notes/arrowFn.md) 
+> 31. [nodejs小爬虫](./notes/spider.md) 
 
 
 

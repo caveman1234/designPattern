@@ -101,6 +101,46 @@ obj1.b = 2;
 //实现了对obj的继承，obj在obj1对原型上了
 ```
 ![图片](../img/create.jpeg)
+> canvas 
+```js
+function loadImage(url){
+	return new Promise((resolve,reject)=>{
+		var img = new Image();
+		img.src = url;
+		img.onload = function(){
+			resolve(img);
+		}
+	});
+}
+function drawImage({img,x=0,y=0,width=100,height=100}){
+	var ctx = document.querySelector('#c1').getContext('2d');
+	ctx.drawImage(img,x,y,width,height);
+}
+async function func(){
+	// var url = "http://www.ideatank.cn:3000/langjiu/banner1.jpg";
+	var url = "./1.png";
+	var img = await loadImage(url);
+	var y = 0;
+	var timer = setInterval(()=>{
+		if(y > 400){
+			clearInterval(timer);
+		}
+		var ctx = document.querySelector('#c1').getContext('2d');
+		ctx.clearRect(0,0,500,500)
+		y = y + 2;
+		var params = {
+			x:0,
+			y:y,
+			img:img,
+			width:100,
+			height:100
+		};
+	drawImage(params);
+	},16);
+	
+}
+func();
+```
 
 
 
